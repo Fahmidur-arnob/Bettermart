@@ -6,8 +6,8 @@ import styled from 'styled-components';
 const Container = styled.div`
     height: 60px;
     // color: white;
-    font-size: 46px;
-    font-weight: 800;
+    /* font-size: 46px;
+    font-weight: 800; */
 `;
 
 const Wrapper = styled.div`
@@ -66,14 +66,14 @@ const Navbar = () => {
         <Container>
             <Wrapper>
                 <Left>
-                    <Language>English</Language>
+                    <Language>EN</Language>
                     <SearchContainer>
                         <Input/>
-                        <Search style={{color:"gray", fontSize:20}}/>
+                        <Search style={{color:"gray", fontSize:18}}/>
                     </SearchContainer>
                 </Left>
                 <Center>
-                    <Logo>Bettermart</Logo>
+                    <Logo style={{fontSize:40}}>Bettermart</Logo>
                 </Center>
                 <Right>
                     <MenuItem>Register</MenuItem>
