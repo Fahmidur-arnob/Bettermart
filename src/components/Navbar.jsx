@@ -50,11 +50,15 @@ const Logo = styled.h1`
 
 const Right = styled.div`
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 `;
 
 const MenuItem = styled.div`
     font-size : 24px;
     cursor: pointer;
+    margin-left: 25px;
 `;
 
 const Navbar = () => {
@@ -65,7 +69,7 @@ const Navbar = () => {
                     <Language>English</Language>
                     <SearchContainer>
                         <Input/>
-                        <Search/>
+                        <Search style={{color:"gray", fontSize:20}}/>
                     </SearchContainer>
                 </Left>
                 <Center>
@@ -75,7 +79,7 @@ const Navbar = () => {
                     <MenuItem>Register</MenuItem>
                     <MenuItem>SignIn</MenuItem>
                     <MenuItem>
-                        <Badge badgeContent={4} color='primary'>
+                        <Badge badgeContent={5} color='primary'>
                             <LocalMallRounded/>
                         </Badge>
                     </MenuItem>
