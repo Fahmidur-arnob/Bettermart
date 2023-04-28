@@ -1,5 +1,5 @@
 import { ArrowLeftRounded, ArrowRightRounded } from '@material-ui/icons';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { sliderItems } from '../data';
 
@@ -33,7 +33,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    transform: translateX(0vw);//because we're going to move the slider on the x-axis;
+    transform: translateX(${props=>props.slideIndex * -100}vw);//because we're going to move the slider on the x-axis;
 `;
 
 const Slide = styled.div`
@@ -84,7 +84,16 @@ const Button = styled.button`
 
 const Slider = () => {
 
-    // const [slideIndex, setSlideIndex] = 
+    const [slideIndex, setSlideIndex] = useState(0);
+
+    const handleArrowClick = (direction) => {
+        if(direction === "left") {
+            setSlideIndex(slideIndex  > 0 ? slideIndex - 1 : 2);
+        }
+        else{
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+        }
+    }
 
 
     return (
@@ -92,7 +101,7 @@ const Slider = () => {
             <Arrow direction="left" onClick={() => handleArrowClick("left")}>
                 <ArrowLeftRounded />
             </Arrow>
-            <Wrapper>
+            <Wrapper slideIndex={slideIndex}>
                 {
                     sliderItems.map(item => (
                         <Slide bg={item.bg}>
